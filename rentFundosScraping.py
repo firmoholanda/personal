@@ -11,9 +11,6 @@ soup = BeautifulSoup(response.text, "lxml")
 
 data = []
 for item in soup.select("table"):
-    #print(item.text)
-    
-    #table = soup.find('table')
     #print(table)
     table_body = soup.find('tbody')
     #print(table_body)
@@ -24,7 +21,6 @@ for item in soup.select("table"):
         data.append([ele for ele in cols if ele]) # Get rid of empty values
 
 print(data)
-
 
 #write to excel
 wb = xlwt.Workbook()
