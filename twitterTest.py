@@ -12,7 +12,7 @@ def main():
     "consumer_secret"     : "ug2mObU0N2NQ0RzSSlF5J0w0QOliFmdDjQA7FWYd4zKk2qWjit",
     "access_token"        : "25709895-Qy9pZeLoOXGHZT9D3C1LNKZcLDc0DbqQpkBjooLka",
     "access_token_secret" : "74AA4gcJDMbNfExZhBEE3XeCDlJhwnnKaga51wU9nTr2p" 
-  }
+    }
 
   api = get_api(cfg)
   tweet = "vamos inha!"
