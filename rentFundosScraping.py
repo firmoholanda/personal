@@ -9,25 +9,21 @@ response = requests.get(url)
 soup = BeautifulSoup(response.text, "lxml")
 #print (soup.text)
 
-#for item in soup.select("tbody"):
-#    print(item.text)
-
 data = []
-table = soup.find('table')
-#print(table)
-table_body = table.find('tbody')
-#print(table_body)
-rows = table_body.find_all('tr')
-for row in rows:
-    cols = row.find_all('td')
-    cols = [ele.text.strip() for ele in cols]
-    data.append([ele for ele in cols if ele]) # Get rid of empty values
+for item in soup.select("table"):
+    #print(item.text)
+    
+    #table = soup.find('table')
+    #print(table)
+    table_body = soup.find('tbody')
+    #print(table_body)
+    rows = table_body.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append([ele for ele in cols if ele]) # Get rid of empty values
 
-for dataItem in data:
-    if len(dataItem) > 1:
-        print(dataItem)
-
-#len(data)
+print(data)
 
 
 #write to excel
