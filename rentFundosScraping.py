@@ -7,7 +7,6 @@ url = "http://www37.bb.com.br/portalbb/tabelaRentabilidade/rentabilidade/gfi7,80
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text, "lxml")
-#print (soup.text)
 
 data = []
 for item in soup.select("table"):
