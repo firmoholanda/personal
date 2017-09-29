@@ -1,6 +1,6 @@
 import time
 import random
-wimport pyautogui
+import pyautogui
  
 #wait to open minecraft
 def wait():
@@ -23,7 +23,6 @@ def startMining(n):
 
         #1920, 1080
         pyautogui.moveTo(random.randint(0, 1920), random.randint(432, 648))
-        #pyautogui.moveTo(random.randint(0, 1920), random.randint(0, 1080))
         #pyautogui.moveTo(random.randint(0, 1920), None)
 
         curPass = str(i+1)
@@ -121,7 +120,7 @@ def sellItems():
 def main():
     wait()
 
-    for i in range(0, 100):
+    for i in range(0, 1000):
         gotoMine()
         startMining(10)
         sellItems()
