@@ -1,11 +1,11 @@
 import time
 import random
-import pyautogui
-
+wimport pyautogui
+ 
 #wait to open minecraft
 def wait():
     for i in range(0, 5):
-        print (i+1)
+        # print (i+1)
         time.sleep(1)
 
 #move mouse cusor, wait and click
@@ -21,8 +21,10 @@ def startMining(n):
         #pyautogui.keyDown('space')
         pyautogui.mouseDown(button='left')
 
-        #pyautogui.moveTo(random.randint(0, 1920), random.randint(340, 740))
-        pyautogui.moveTo(random.randint(0, 1920), None)
+        #1920, 1080
+        pyautogui.moveTo(random.randint(0, 1920), random.randint(432, 648))
+        #pyautogui.moveTo(random.randint(0, 1920), random.randint(0, 1080))
+        #pyautogui.moveTo(random.randint(0, 1920), None)
 
         curPass = str(i+1)
         min = str( round( ((i+1)*3)/60 , 1) )
@@ -65,7 +67,9 @@ def gotoMine():
     time.sleep(15)
 
     #mining start position
-    pyautogui.moveTo(random.randint(0, 1920), 750)
+    #up 350
+    #down 750
+    pyautogui.moveTo(random.randint(0, 1920), 350)
     time.sleep(3)
 
     pyautogui.keyUp('w')
@@ -83,14 +87,14 @@ def sellItems():
     pyautogui.keyDown('w')
     pyautogui.keyDown('ctrl')
     time.sleep(7)
-    pyautogui.moveTo(0, 545)
+    pyautogui.moveTo(35, 545)
     time.sleep(5)
     pyautogui.moveTo(0, 545)
     time.sleep(9)
     pyautogui.moveTo(0, 545)
+    time.sleep(3)
+    pyautogui.moveTo(76, 545)
     time.sleep(2)
-    pyautogui.moveTo(110, 545)
-    time.sleep(1)
     pyautogui.keyUp('w')
     pyautogui.keyUp('ctrl')
 
@@ -107,6 +111,9 @@ def sellItems():
     pointAndClick(405, 437)
 
     pyautogui.press('esc')
+    time.sleep(0.3)
+    pointAndClick(475, 318)  #fail safe
+
     pyautogui.typewrite('/bal', interval=0.1)
     pyautogui.press('enter')
     time.sleep(10)
@@ -114,11 +121,12 @@ def sellItems():
 def main():
     wait()
 
-    for i in range(0, 3):
+    for i in range(0, 100):
         gotoMine()
-        startMining(1)
-        #returnHome()
+        startMining(10)
         sellItems()
+    
+    returnHome()
 
 if __name__ == "__main__":
     main()
