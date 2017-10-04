@@ -1,11 +1,11 @@
-import time
+wimport time
 import random
 import pyautogui
- 
+#  
 #wait to open minecraft
 def wait():
     for i in range(0, 5):
-        # print (i+1)
+        print (i+1)
         time.sleep(1)
 
 #move mouse cusor, wait and click
@@ -22,8 +22,9 @@ def startMining(n):
         pyautogui.mouseDown(button='left')
 
         #1920, 1080
-        pyautogui.moveTo(random.randint(0, 1920), random.randint(432, 648))
-        #pyautogui.moveTo(random.randint(0, 1920), None)
+        #pyautogui.moveTo(random.randint(0, 1920), random.randint(432, 648))
+        pyautogui.moveTo(random.randint(0, 1920), None)
+        #pyautogui.moveTo(random.randint(0, 1920), 700)
 
         curPass = str(i+1)
         min = str( round( ((i+1)*3)/60 , 1) )
@@ -50,6 +51,11 @@ def returnHome():
 
 #go to mine
 def gotoMine():
+    #get balance
+    pyautogui.typewrite('/bal', interval=0.1)
+    pyautogui.press('enter')
+    time.sleep(10)
+    
     pyautogui.typewrite('/portal', interval=0.1)
     pyautogui.press('enter')
     time.sleep(0.3)
@@ -68,7 +74,7 @@ def gotoMine():
     #mining start position
     #up 350
     #down 750
-    pyautogui.moveTo(random.randint(0, 1920), 350)
+    pyautogui.moveTo(random.randint(0, 1920), 900)
     time.sleep(3)
 
     pyautogui.keyUp('w')
@@ -113,6 +119,7 @@ def sellItems():
     time.sleep(0.3)
     pointAndClick(475, 318)  #fail safe
 
+    #get balance
     pyautogui.typewrite('/bal', interval=0.1)
     pyautogui.press('enter')
     time.sleep(10)
