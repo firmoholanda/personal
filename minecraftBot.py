@@ -1,18 +1,20 @@
 wimport time
 import random
 import pyautogui
-#  
+
 #wait to open minecraft
 def wait():
     for i in range(0, 5):
         print (i+1)
         time.sleep(1)
+#------------------------------------------------------------------------
 
 #move mouse cusor, wait and click
 def pointAndClick(x, y):
     pyautogui.moveTo(x, y)
     time.sleep(0.3)
     pyautogui.click()
+#------------------------------------------------------------------------
 
 #start mining in minutes
 def startMining(n):
@@ -35,6 +37,7 @@ def startMining(n):
 
     pyautogui.keyUp('w')
     pyautogui.keyUp('space')    
+#------------------------------------------------------------------------    
 
 #return home
 def returnHome():
@@ -48,6 +51,7 @@ def returnHome():
 
     pyautogui.typewrite('/f home', interval=0.1)
     pyautogui.press('enter')
+#------------------------------------------------------------------------
 
 #go to mine
 def gotoMine():
@@ -55,7 +59,7 @@ def gotoMine():
     pyautogui.typewrite('/bal', interval=0.1)
     pyautogui.press('enter')
     time.sleep(10)
-    
+
     pyautogui.typewrite('/portal', interval=0.1)
     pyautogui.press('enter')
     time.sleep(0.3)
@@ -79,6 +83,7 @@ def gotoMine():
 
     pyautogui.keyUp('w')
     pyautogui.keyUp('ctrl')
+#------------------------------------------------------------------------
     
 #sell items
 def sellItems():
@@ -123,16 +128,16 @@ def sellItems():
     pyautogui.typewrite('/bal', interval=0.1)
     pyautogui.press('enter')
     time.sleep(10)
+#------------------------------------------------------------------------
 
 def main():
     wait()
-
     for i in range(0, 1000):
         gotoMine()
         startMining(10)
         sellItems()
-    
     returnHome()
+#------------------------------------------------------------------------
 
-if __name__ == "__main__":
-    main()
+#call main
+main()
