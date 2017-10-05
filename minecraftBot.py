@@ -1,4 +1,4 @@
-wimport time
+import time
 import random
 import pyautogui
 
@@ -23,10 +23,8 @@ def startMining(n):
         #pyautogui.keyDown('space')
         pyautogui.mouseDown(button='left')
 
-        #1920, 1080
-        #pyautogui.moveTo(random.randint(0, 1920), random.randint(432, 648))
+        #screen size = 1920, 1080
         pyautogui.moveTo(random.randint(0, 1920), None)
-        #pyautogui.moveTo(random.randint(0, 1920), 700)
 
         curPass = str(i+1)
         min = str( round( ((i+1)*3)/60 , 1) )
@@ -58,7 +56,7 @@ def gotoMine():
     #get balance
     pyautogui.typewrite('/bal', interval=0.1)
     pyautogui.press('enter')
-    time.sleep(10)
+    time.sleep(5)
 
     pyautogui.typewrite('/portal', interval=0.1)
     pyautogui.press('enter')
@@ -76,8 +74,6 @@ def gotoMine():
     time.sleep(15)
 
     #mining start position
-    #up 350
-    #down 750
     pyautogui.moveTo(random.randint(0, 1920), 900)
     time.sleep(3)
 
@@ -94,6 +90,7 @@ def sellItems():
     pointAndClick(371, 475)
     time.sleep(3)
 
+    #walk to trader
     pyautogui.keyDown('w')
     pyautogui.keyDown('ctrl')
     time.sleep(7)
@@ -111,6 +108,7 @@ def sellItems():
     pyautogui.click(button='right')
     time.sleep(0.3)
 
+    #point to sell items
     pointAndClick(335, 367)
     pointAndClick(405, 367)
     pointAndClick(440, 367)
