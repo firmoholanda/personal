@@ -130,10 +130,12 @@ def sellItems():
 
 def main():
     wait()
+
     for i in range(0, 1000):
         gotoMine()
         startMining(10)
         sellItems()
+
     returnHome()
 #------------------------------------------------------------------------
 
