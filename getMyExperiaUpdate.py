@@ -20,8 +20,16 @@ for item in soup.select("table"):
         data.append([ele for ele in cols if ele]) # Get rid of empty values
 
 #print(data)
-print( data )
+#print( data[0][0] )
 
-for item in data:
-    if item == "Xperia™ XA1 Ultra":
-        print( item )
+for i, item in data:
+    #if i == "Xperia™ XA1 Ultra":
+     if i == "Xperia™ XA1 Ultra":
+        if item != "Will be updated to Android™ 8.0":
+            launched = True
+            print( item )
+            print( launched )
+        else:
+            launched = False
+            print( item )
+            print( launched )
