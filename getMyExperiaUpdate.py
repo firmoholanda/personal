@@ -1,6 +1,7 @@
 import requests 
 from bs4 import BeautifulSoup
 import xlwt
+import smtplib
 
 #site xperia global
 url = "https://support.sonymobile.com/global-en/xperiaxa/kb/801930740188bd387015e0fa244400032cc/"
@@ -19,9 +20,8 @@ for item in soup.select("table"):
         cols = [ele.text.strip() for ele in cols]
         data.append([ele for ele in cols if ele]) # Get rid of empty values
 
-#print(data)
-#print( data[0][0] )
 
+#check if update is avaliable
 for i, item in data:
     #if i == "Xperia™ XA1 Ultra":
      if i == "Xperia™ XA1 Ultra":
@@ -33,3 +33,10 @@ for i, item in data:
             launched = False
             print( item )
             print( launched )
+
+#send mail
+server = smtplib.SMTP('mail.grupocdmax.com.br', 25)
+server.login("admin", "teste")
+
+msg = "Hello!" # The /n separates the message from the headers
+server.sendmail("firmo@viize.com", "firmo@viize.com", msg)
