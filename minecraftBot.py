@@ -24,7 +24,7 @@ def startMining(n):
         pyautogui.mouseDown(button='left')
 
         #screen size = 1920, 1080
-        pyautogui.moveTo(random.randint(0, 1920), None)
+        #pyautogui.moveTo(random.randint(0, 1920), None)
 
         curPass = str(i+1)
         min = str( round( ((i+1)*3)/60 , 1) )
@@ -132,9 +132,9 @@ def main():
     wait()
 
     for i in range(0, 1000):
-        gotoMine()
+        #gotoMine()
         startMining(10)
-        sellItems()
+        #sellItems()
 
     returnHome()
 #------------------------------------------------------------------------
