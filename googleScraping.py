@@ -18,3 +18,5 @@ def search(search_item):
         soup = BeautifulSoup(res.text,"lxml")
         for item in soup.select(".r a"):
             print(item.text)
+
+search("firmo holanda")
