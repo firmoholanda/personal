@@ -48,3 +48,9 @@ Calculate the sales for a given location by adding all the sales receipts togeth
 
 Using a graphing library (like high charts), graph the cost of labour against the sales for the location
 
+
+
+
+#help
+https://jsonformatter.curiousconcept.com/
+
