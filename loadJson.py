@@ -1,4 +1,4 @@
-import json, requests
+import json, requests,  xlwt
 from datetime import datetime
     
 #get location info
@@ -30,17 +30,27 @@ dataTimePunche = json.loads(rTimePunche.content.decode())
 #    print (dataUser['25753'][user]['firstName'] )
 
 #------------------------------------------------------------------------------
-
+data = []
 #time punche
 for timePunche in dataTimePunche:
 
-    #print (dataTimePunche[timePunche]['userId'])
-    #print (dataTimePunche[timePunche]['hourlyWage'])
-    if (dataTimePunche[timePunche]['userId']) == 517169:
-        clockedOut = datetime.strptime(dataTimePunche['517169']['clockedOut'], "%Y-%m-%d %H:%M:%S")
-        clockedIn = datetime.strptime(dataTimePunche['517169']['clockedIn'], "%Y-%m-%d %H:%M:%S")
-        workedTime = clockedOut - clockedIn
-        print(workedTime)
+    #checks if imput data is empty amd skip current time punche entry
+    if ( dataTimePunche[timePunche]['clockedOut'] or dataTimePunche[timePunche]['clockedIn'] ) == '0000-00-00 00:00:00':
+        continue
+    
+    clockedOut = datetime.strptime(dataTimePunche[timePunche]['clockedOut'], "%Y-%m-%d %H:%M:%S")
+    clockedIn = datetime.strptime(dataTimePunche[timePunche]['clockedIn'], "%Y-%m-%d %H:%M:%S")
+    workedTime = clockedOut - clockedIn
 
 
+    data.append([dataTimePunche[timePunche]['userId'], dataTimePunche[timePunche]['clockedIn'], dataTimePunche[timePunche]['clockedOut'], workedTime.total_seconds()/60])
 
+    #print(data)
+
+#write to excel
+wb = xlwt.Workbook()
+ws = wb.add_sheet("timePunche.xls")
+for rownum, sublist in enumerate(data):
+    for colnum, value in enumerate(sublist):
+        ws.write(rownum, colnum, value)
+wb.save("timePunche.xls")
