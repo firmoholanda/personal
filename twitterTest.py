@@ -15,7 +15,7 @@ def main():
     }
 
   api = get_api(cfg)
-  tweet = "vamos inha!"
+  tweet = "oi alex teste"
   status = api.update_status(status=tweet) 
   # Yes, tweet is called 'status' rather confusing
 

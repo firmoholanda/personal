@@ -19,4 +19,4 @@ def search(search_item):
         for item in soup.select(".r a"):
             print(item.text)
 
-search("firmo holanda")
+search("smartmentor")
