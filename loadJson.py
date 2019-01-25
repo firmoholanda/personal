@@ -6,16 +6,16 @@ def loadDataProcessAndPrint():
 
     #load data from json
     #get location info
-    rLocation = open('C:\\Users\\firmo\\OneDrive\\coding\\python\\sevenShifts\\info\\data\\locations.json').read()
-    dataLocation = json.loads(rLocation)
+    rLocation = requests.get(url='https://shiftstestapi.firebaseio.com/locations.json')
+    dataLocation = json.loads(rLocation.content.decode())
 
     #get user info
-    rUser = open('C:\\Users\\firmo\\OneDrive\\coding\\python\\sevenShifts\\info\\data\\users.json').read()
-    dataUser = json.loads(rUser)
+    rUser = requests.get(url='https://shiftstestapi.firebaseio.com/users.json')
+    dataUser = json.loads(rUser.content.decode())
 
     #get time punche
-    rTimePunche = open('C:\\Users\\firmo\\OneDrive\\coding\\python\\sevenShifts\\info\\data\\timePunches.json').read()
-    dataTimePunche = json.loads(rTimePunche)
+    rTimePunche = requests.get(url='https://shiftstestapi.firebaseio.com/timePunches.json')
+    dataTimePunche = json.loads(rTimePunche.content.decode())
 
     #create dictionay with extracted info
     data = []
@@ -91,7 +91,7 @@ def writeToExcel():
 def main():
     loadDataProcessAndPrint()
     #writeToExcel()
-#------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 
 #call main
 main()
