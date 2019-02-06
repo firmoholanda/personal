@@ -1,0 +1,7 @@
+{% block content %}
+    {% for post in posts %}
+        <h2><a>{{ post.name }}</a></h2>
+        <a>-----------------------------------</a>
+        <a>{{ post.age }}</a>
+    {% endfor %}
+{% endblock content %}
