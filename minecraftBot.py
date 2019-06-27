@@ -4,7 +4,7 @@ import pyautogui
 
 #wait to open minecraft
 def wait():
-    for i in range(0, 5):
+    for i in range(0, 3):
         print (i+1)
         time.sleep(1)
 #------------------------------------------------------------------------
@@ -24,7 +24,7 @@ def startMining(n):
         pyautogui.mouseDown(button='left')
 
         #screen size = 1920, 1080
-        #pyautogui.moveTo(random.randint(0, 1920), None)
+        pyautogui.moveTo(random.randint(0, 960), None)
 
         curPass = str(i+1)
         min = str( round( ((i+1)*3)/60 , 1) )
@@ -131,12 +131,12 @@ def sellItems():
 def main():
     wait()
 
-    for i in range(0, 1000):
+    #for i in range(0, 1000):
         #gotoMine()
-        startMining(10)
+    startMining(3)
         #sellItems()
 
-    returnHome()
+    #returnHome()
 #------------------------------------------------------------------------
 
 #call main
