@@ -12,14 +12,15 @@ import sys
 def countingValleys(n, s):
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    n = int(input())
+    #n = int(input())
+    #s = input()
 
-    s = input()
+    n = 8
+    s = "UDDDUDUU"
 
     result = countingValleys(n, s)
 
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+    #fptr.write(str(result) + '\n')
+    #fptr.close()
