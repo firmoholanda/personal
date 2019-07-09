@@ -21,6 +21,10 @@ def jumpingOnClouds(c):
 
     #check the rest
     while (j <= n-2):
+        if ((j+2)>(n-1)):
+            j += 1
+            pathList.append(j)
+            break
         if (c[j+2] == 0):
             j += 2
             pathList.append(j)
@@ -28,21 +32,13 @@ def jumpingOnClouds(c):
             j += 1
             pathList.append(j)
             
-    #return len(pathList)-1
-    return pathList
+    return len(pathList)-1
+    #return pathList
 
 if __name__ == '__main__':
-    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-    #n = int(input())
-    #c = list(map(int, input().rstrip().split()))
-
     n = 6
     c = [0, 0, 0, 1, 0, 0]
 
     result = jumpingOnClouds(c)
-    #print(c[4])
+  
     print(result)
-
-    #fptr.write(str(result) + '\n')
-    #fptr.close()
