@@ -45,7 +45,7 @@ def returnHome():
     time.sleep(0.3)
     
     pointAndClick(586, 435)
-    time.sleep(3)
+    time.sleep(3)w
 
     pyautogui.typewrite('/f home', interval=0.1)
     pyautogui.press('enter')

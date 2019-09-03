@@ -9,32 +9,40 @@ import sys
 
 # Complete the repeatedString function below.
 def repeatedString(s, n):
-    #special case
-    #if (s == "a"):
-    #    return n
+    
 
-    #other cases
-    numbSubString = math.ceil(n/len(s))
-    newString = s * numbSubString
+    lenS = len(s)
+    totalAinS = s.count('a')
+
+    nDivLenS = n / lenS
+
+    totalAsSubString = math.floor(nDivLenS) * totalAinS
+
+    remanderA = n - (lenS * math.floor(nDivLenS))
+
+  
     
-    totalA = 0
-    for i in newString:
-        if (i == "a"):
-            totalA +=1
+    return (totalAsSubString + remanderA)
     
-    #newString = newString[:n]                   #concatenate new string
-    return totalA
-    #return newString.count('a')
+    
 
 if __name__ == '__main__':
 
-    s = "a"
-    n = 1000000000000
+    #s = "gfcaaaecbg"
+    #n = 547602
+
+    s = "gfcaaaecbg"
+    n = 547602
+    
+    #gfcaaaecbg
+    #547602
+    #164280
 
     #kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm
     #736778906400
-
     #out: 51574523448
+
+    
 
     result = repeatedString(s, n)
     print(result)
