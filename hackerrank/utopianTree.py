@@ -17,6 +17,7 @@ def utopianTree(n):
             height*=2
     return height
 
+
 if __name__ == '__main__':
 
     #imput
