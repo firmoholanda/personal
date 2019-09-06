@@ -10,6 +10,9 @@ import sys
 
 # Complete the extraLongFactorials function below.
 def extraLongFactorials(n):
+    
+    for i in range(1,n+1): 
+        myFact = myFact * i 
 
     return myFact
 
@@ -17,4 +20,6 @@ def extraLongFactorials(n):
 if __name__ == '__main__':
     n = int(input())
 
-    extraLongFactorials(n)
+    result = extraLongFactorials(10)
+    print(result)
+
