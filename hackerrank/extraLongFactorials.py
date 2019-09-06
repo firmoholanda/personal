@@ -10,16 +10,15 @@ import sys
 
 # Complete the extraLongFactorials function below.
 def extraLongFactorials(n):
-    
-    for i in range(1,n+1): 
-        myFact = myFact * i 
-
-    return myFact
+    if n == 0:
+        return 1
+    else:
+        return n * extraLongFactorials(n-1)
 
 
 if __name__ == '__main__':
-    n = int(input())
+ 
 
-    result = extraLongFactorials(10)
+    result = extraLongFactorials(25)
     print(result)
 
