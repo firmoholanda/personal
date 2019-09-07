@@ -44,9 +44,9 @@ def breakingRecords(scores):
 
 if __name__ == '__main__':
 
-    n = 10
+    n = 9
     #scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]
-    scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
+    scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]
 
     #with open("c:/temp/imputText.txt") as f:
     #    scores = list(map(int, f.read().rstrip().split() ))
