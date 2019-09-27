@@ -12,22 +12,24 @@ function totalItemsInArray(item, arr) {
     return count;
 }
 //---------------------------------------------------------------------------------------
+//consoleLogToDOM("container", "div")
+function consoleLogToDOM(classID, domTag) {
+    // Overriding console object
+    let console = {};
 
-// Overriding console object
-let console = {};
+    // Getting div to insert logs
+    let logger = document.getElementById(lassID);
 
-// Getting div to insert logs
-let logger = document.getElementById("container");
+    // Adding log method from our console object
+    console.log = text =>
+    {
+        let element = document.createElement(domTag);
+        let txt = document.createTextNode(text);
 
-// Adding log method from our console object
-console.log = text =>
-{
-    let element = document.createElement("div");
-    let txt = document.createTextNode(text);
+        //logger.textContent = "";
 
-    logger.empty();
-
-    element.appendChild(txt);
-    logger.appendChild(element);
+        element.appendChild(txt);
+        logger.appendChild(element);
+    }
 }
 //---------------------------------------------------------------------------------------
