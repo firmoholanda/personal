@@ -14,22 +14,8 @@ function totalItemsInArray(item, arr) {
 //---------------------------------------------------------------------------------------
 //consoleLogToDOM("container", "div")
 function consoleLogToDOM(classID, domTag) {
-    // Overriding console object
-    let console = {};
-
-    // Getting div to insert logs
-    let logger = document.getElementById(lassID);
-
-    // Adding log method from our console object
-    console.log = text =>
-    {
-        let element = document.createElement(domTag);
-        let txt = document.createTextNode(text);
-
-        //logger.textContent = "";
-
-        element.appendChild(txt);
-        logger.appendChild(element);
-    }
+    consoleLogToDOM("container", "div");
+    console.log = function(message) {$('#container').append('<p>' + message + '</p>');};
+    console.error = console.debug = console.info =  console.log
 }
 //---------------------------------------------------------------------------------------
