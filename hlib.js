@@ -12,6 +12,7 @@ function totalItemsInArray(item, arr) {
     return count;
 }
 //---------------------------------------------------------------------------------------
+
 //consoleLogToDOM("container", "div")
 function consoleLogToDOM(classID, domTag) {
     consoleLogToDOM("container", "div");
@@ -19,3 +20,13 @@ function consoleLogToDOM(classID, domTag) {
     console.error = console.debug = console.info =  console.log
 }
 //---------------------------------------------------------------------------------------
+
+function showHideElementDOM(classID) {
+    var x = document.getElementById(classID);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+  //---------------------------------------------------------------------------------------
