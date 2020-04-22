@@ -1,0 +1,9 @@
+ipconfig /release
+cd c:\Program Files\CCleaner\
+start CCleaner.exe"
+
+
+ipconfig /renew
+taskkill /f /im "CCleaner64.exe" /t
+
+tasklist
